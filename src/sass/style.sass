@@ -1,0 +1,316 @@
+@mixin new-before()
+    position: absolute
+    left: 0
+    top: 0
+    width: 50px
+    height: 50px
+    content: ""
+=media ($size)
+   @media screen and ( min-width: #{$size}px )
+       @content
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+$primary-color: #6a5acd
+$shadow-color: #000000
+$shadow-color-hover: #000000
+$border-radius: 10px
+$card-padding: 30px
+
+a
+    text-decoration: none
+ul, li
+    list-style: none
+
+html
+    font-size: 1px
+html, body
+    scroll-behavior: smooth
+
+.wrapper
+    max-width: 1024px
+    margin: 0 auto
+.header
+    padding: 20px 0
+    display: flex
+    justify-content: space-between
+.menu
+    display: flex
+    column-gap: 20px
+    align-items: center
+.burger
+    width: 30px
+    height: 30px
+    background-image: url(../img/house.png) 
+    background-size: contain
+
+.burger-close
+    background-image: url(../img/close.png)
+
+
+.text-header
+    font-size: 14px
+    letter-spacing: 1px
+    line-height: 32px
+    text-transform: uppercase
+    font-weight: 700
+    font-family: "Maven Pro"
+
+p
+        text-align: center
+        margin: auto
+        margin-bottom: 180px
+        font-size: 16px
+        line-height: 28px
+        font-weight: 400
+        font-family: "Maven Pro"
+        text-align: center
+header, .map
+    font-size: 16rem
+    background-color: #b300ff99
+    color: #fff
+    position: relative
+    padding-bottom: 50px
+    &::before
+        background-position: center
+        +new-before()
+        width: 100%
+        height: 100%
+        background-image: url(../img/header-background.png)
+        z-index: -1
+    .wrapper
+        display: flex
+        justify-content: space-between
+        padding-top: 43px
+    .icon  
+        display: flex
+        strong
+            text-transform: uppercase
+            padding: 10px 20px
+            display: inline-block  
+            font-size: 30px
+            letter-spacing: 6px
+            line-height: 29px
+            color: #ffffff
+            font-weight: 700
+            font-family: "Maven Pro"  
+    .menu
+        ul
+            display: flex
+            .link
+                padding: 20px 
+                color: #fff
+                &:hover
+                    border-bottom: 1px solid #fff
+.started
+    width: 150px
+    padding: 19px 33px 17px
+    box-sizing: border-box
+    font-size: 12px
+    color: #fff
+    text-align: center
+    text-transform: uppercase
+    border-radius: 25px
+    border: 1px solid #ffffff
+    display: block
+    transition: 1s all ease
+    &:hover
+        color: #000
+        background-color: #fff
+        border-color: #000
+            
+    .text-header
+        text-align: center
+        margin-top: 182px
+        margin-bottom: 40px
+h1
+    text-align: center
+    margin-bottom: 22px
+    font-size: 86px
+    letter-spacing: -3px
+    line-height: 72px
+    color: #ffffff
+    font-weight: 500
+    font-family: "Maven Pro"
+    text-align: center
+p
+    text-align: center
+    margin: auto
+    margin-bottom: 55px
+    font-size: 16px
+    line-height: 28px
+    color: #9fa4af
+    font-weight: 400px
+    font-family: "Maven Pro"
+    text-align: center
+.button
+    display: flex
+    width: 60px
+    height: 60px
+    border-radius: 32px
+    border: 2px solid #fff
+    background-color: #ffffff
+    justify-content: center
+    align-items: center
+    margin: auto
+    margin-bottom: 50px
+    &:hover
+        background-color: #000000
+        transform: scale(110%)
+main
+    color: #9fa4af
+.text-header
+    text-align: center
+    margin-top: 182px
+    margin-bottom: 25px
+h2, .price
+    font-size: 60px
+    letter-spacing: -2px
+    line-height: 72px
+    font-weight: 500
+    font-family: "Maven Pro"
+    text-align: center
+    color: #4f4f6f
+    margin: 0
+    
+p
+    max-width: 440px
+.pricing-container
+    display: flex
+    justify-content: space-around
+    gap: 20px
+    max-width: 1200px
+    margin: 0 auto
+
+.pricing-card
+    background: white
+    border-radius: $border-radius
+    padding: $card-padding
+    text-align: center
+    box-shadow: 0 0 10px $shadow-color
+    flex: 1
+    img
+        height: 110px
+        margin: 20px auto
+    .text-header
+        margin-top: 50px
+        margin-bottom: 28px
+.price
+    position: relative
+    margin: 20px 0
+    &::before
+        +new-before()
+        content: "$"
+        font-size: 24px
+        top: -9px
+        left: 60px
+    &::after
+        +new-before()
+        content: "/per month"
+        font-size: 16px
+        width: auto
+        left: 164px
+        top: 11px
+.select-plan
+    background: #fff
+    border: 1px solid grey
+    color: #000
+    padding: 10px 20px
+    cursor: pointer
+    margin: 0 auto
+.active
+    background: $primary-color
+    color: white
+    border: none
+.map 
+    padding-top: 115px
+    margin-top: 115px 
+    color: #fff
+    &::before
+        background-image: url(../img/map.png)
+    h2
+        color: #fff
+    p
+        color: #fff
+    .map-buttons
+        display: flex
+        gap: 10px
+        margin: auto
+        width: max-content
+        a
+            display: block
+            width: 190px
+            padding: 22px 10px 19px
+            color: #acb4c7
+            box-sizing: border-box
+.container 
+    max-width: 1920px
+    margin: 0 auto
+    padding: 0 20px
+.header_
+    border-bottom: 1px solid #fff
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 15px 20px
+.logo 
+    display: flex
+    align-items: center
+.logo img 
+    width: 40px
+    height: 40px
+    margin-right: 10px
+.logo-text 
+    font-size: 20px
+    font-weight: 600px
+    color: #222
+nav
+    display: flex
+    align-items: center
+    button.started:hover
+        background-color: #6e45e2
+        color: #fff
+    ul 
+        list-style: none
+        display: flex
+        padding: 0
+        margin: 0
+
+        li 
+            margin-left: 40px
+            a 
+                color: #555
+                text-decoration: none
+                font-weight: 500
+                font-size: 14px
+                transition: color 0.3s ease
+footer 
+    font-size: 12px
+    color: #888
+    padding: 10px 20px
+    border-top: 1px solid #eaeaea
+    text-align: center
+    .social
+        a
+            background-position: center
+            width: 16px
+            height: 16px
+            z-index: -1
+            display: inline-block
+            margin-left: 30px
+            background-repeat: no-repeat
+            background-size: contain
+.Facebook
+    background-image: url(../img/icons/fb.svg)
+.Twitter
+    background-image: url(../img/icons/tw.svg)
+.Instagram
+    background-image: url(../img/icons/inst.svg)
+.Google-plus
+    background-image: url(../img/icons/email.svg)
+
+
+
+
