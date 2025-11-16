@@ -37,18 +37,34 @@ html, body
     display: flex
     justify-content: space-between
 .menu
-    display: flex
+    display: none
     column-gap: 20px
     align-items: center
+    +media(500)
+        display: flex
+.open
+    display: flex
+    position: absolute
+    flex-direction: column
+    right: 30px
+    top: 90px
+    padding: 10px
+    border: 1px solid #000
+    row-gap: 8px
+
+    ul
+        flex-direction: column
+        row-gap: 6px
+    
 .burger
     width: 30px
     height: 30px
-    background-image: url(../img/house.png) 
+    background-image: url(../img/icons/home.png) 
     background-size: contain
 
-.burger-close
-    background-image: url(../img/close.png)
 
+.burger-close
+    background-image: url(../img/icons/close.png)
 
 .text-header
     font-size: 14px
@@ -183,7 +199,10 @@ p
     gap: 20px
     max-width: 1200px
     margin: 0 auto
-
+    flex-direction: column
+    +media(600)
+        flex-direction: row
+        
 .pricing-card
     background: white
     border-radius: $border-radius
@@ -239,6 +258,9 @@ p
         gap: 10px
         margin: auto
         width: max-content
+        flex-direction: column
+        +media(500)
+            flex-direction: row
         a
             display: block
             width: 190px
@@ -255,6 +277,9 @@ p
     align-items: center
     justify-content: space-between
     padding: 15px 20px
+    flex-direction: column
+    +media(500)
+        flex-direction: row
 .logo 
     display: flex
     align-items: center
@@ -269,6 +294,9 @@ p
 nav
     display: flex
     align-items: center
+    flex-direction: column
+    +media(500)
+        flex-direction: row
     button.started:hover
         background-color: #6e45e2
         color: #fff
@@ -277,6 +305,9 @@ nav
         display: flex
         padding: 0
         margin: 0
+        flex-direction: column
+        +media(500)
+            flex-direction: row
 
         li 
             margin-left: 40px
