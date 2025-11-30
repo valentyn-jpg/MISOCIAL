@@ -241,24 +241,28 @@ p
         margin-bottom: 28px
 .price
     position: relative
-    margin: 20px 0
+    margin: 20px auto
+    width: max-content
     &::before
         +new-before()
         content: "$"
         font-size: 24px
         top: -9px
-        left: 60px
+        left: -45px
     &::after
         +new-before()
         content: "/per month"
         font-size: 16px
         width: auto
-        left: 130px
-        top: 25px
-        +media(600)
-        font-size: 47px
+        white-space: nowrap
+        left: 100%
         letter-spacing: -2px
         line-height: 37px
+        top: 31px
+        +media(600)
+            font-size: 16px
+            letter-spacing: -2px
+            line-height: 37px
 .select-plan
     background: #fff
     border: 1px solid grey
